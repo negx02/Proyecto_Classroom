@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-configuration PUBLIC 
 "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
-"http://www.hibernate.org/dtd/hibernate-configuration">
+"http://www.hibernate.org/dtd/hibernate-configuration.dtd">
 
 <hibernate-configuration>
     <!-- jksjdjjjf -->
@@ -13,18 +13,18 @@
             com.mysql.cj.jdbc.Driver
         </property>
         <property name="hibernate.connection.url">
-            jdbc:mysql://72.29.120.28/siste214_252759x?useSSL=false
+            jdbc:mysql://127.0.0.1:3306/classroom?useSSL=false
         </property>
         <property name="hibernate.connection.username">
-            siste214_252759x
+            root
         </property>
         <property name="hibernate.connection.password">
-            ITS@252759a
+            Admin
         </property>
         
         <mapping class="mx.itson.classroom.entities.Assignment"/>
         <mapping class="mx.itson.classroom.entities.Student"/>
-        <mapping class="mx.itson.classroom.entities.Student"/>
+        <mapping class="mx.itson.classroom.entities.Work"/>
     </session-factory>
 </hibernate-configuration>
 

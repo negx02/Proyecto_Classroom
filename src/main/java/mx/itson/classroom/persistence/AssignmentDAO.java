@@ -33,7 +33,7 @@ public class AssignmentDAO {
             session.save(a);
             session.getTransaction().commit();
 
-            resultado = a.getId() != null;
+            resultado = a.getId() != 0;
         } catch (Exception ex) {
             System.err.println("Ocurrió un error: " + ex.getMessage());
         }

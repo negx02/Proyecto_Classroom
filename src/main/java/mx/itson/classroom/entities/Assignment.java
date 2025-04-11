@@ -1,5 +1,6 @@
 package mx.itson.classroom.entities;
 
+import java.sql.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,21 +11,35 @@ import java.util.List;
 @Entity
 public class Assignment {
 
+    /**
+     * @return the dueDate
+     */
+    public Date getDueDate() {
+        return dueDate;
+    }
+
+    /**
+     * @param dueDate the dueDate to set
+     */
+    public void setDueDate(Date dueDate) {
+        this.dueDate = dueDate;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
     private String title;
     private String description;
-    private String dueDate;
+    private Date dueDate;
 
     @OneToMany(mappedBy = "assignment")
     private List<Work> works;
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -44,13 +59,8 @@ public class Assignment {
         this.description = description;
     }
 
-    public String getDueDate() {
-        return dueDate;
-    }
 
-    public void setDueDate(String dueDate) {
-        this.dueDate = dueDate;
-    }
+    
 
     public List<Work> getWorks() {
         return works;
