@@ -118,9 +118,9 @@ public class WorkList extends javax.swing.JFrame {
             modelo.addRow(new Object[] {
                 w.getId(),
                 w.getFileName(),
+                w.getIdAssigment(),
                 w.getDate(),
-                w.getAssignment(),
-                w.getStudent()
+                w.getIdStudent(),
             });
         }
     }
