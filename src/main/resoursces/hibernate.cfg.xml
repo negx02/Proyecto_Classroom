@@ -13,13 +13,13 @@
             com.mysql.cj.jdbc.Driver
         </property>
         <property name="hibernate.connection.url">
-            jdbc:mysql://72.29.120.28/siste214_zoo?useSSL=false
+            jdbc:mysql://72.29.120.28/siste214_252759x?useSSL=false
         </property>
         <property name="hibernate.connection.username">
-            siste214_zoo
+            siste214_252759x
         </property>
         <property name="hibernate.connection.password">
-            itp#FG963025
+            ITS@252759a
         </property>
         
         <mapping class="mx.itson.zoo.entidades.Animal"/>
