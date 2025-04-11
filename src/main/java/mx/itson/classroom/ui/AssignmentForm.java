@@ -4,6 +4,12 @@
  */
 package mx.itson.classroom.ui;
 
+import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import javax.swing.JOptionPane;
+import mx.itson.classroom.entities.Assignment;
+import mx.itson.classroom.persistence.AssignmentDAO;
 /**
  *
  * @author nicol
@@ -43,6 +49,8 @@ public class AssignmentForm extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel1.setText("Nueva asignacion");
+
+        jTextField2.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         jButton1.setText("AGREGAR");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -114,6 +122,36 @@ public class AssignmentForm extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        try {
+       
+        String titulo = jTextField3.getText(); 
+        String description = jTextField1.getText();
+        String fechaTexto = jTextField2.getText();
+        
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        java.util.Date fechaUtil = sdf.parse(fechaTexto);
+        java.sql.Date dueDate = new java.sql.Date(fechaUtil.getTime());
+        
+        // Crear objeto Assignment
+        Assignment nuevoAssignment = new Assignment();
+        nuevoAssignment.setTitle(titulo);
+        nuevoAssignment.setDescription(description);
+        nuevoAssignment.setDueDate(dueDate);
+        
+        // Guardar en la base de datos
+        boolean resultado = AssignmentDAO.guardar(nuevoAssignment);
+        
+        if(resultado) {
+            JOptionPane.showMessageDialog(this, "Tarea guardada exitosamente");
+        } else {
+            JOptionPane.showMessageDialog(this, "Error al guardar la tarea", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    } catch (ParseException ex) {
+        JOptionPane.showMessageDialog(this, "Formato de fecha incorrecto. Use yyyy-MM-dd", "Error", JOptionPane.ERROR_MESSAGE);
+    } catch (Exception ex) {
+        JOptionPane.showMessageDialog(this, "Error inesperado: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+    }
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
