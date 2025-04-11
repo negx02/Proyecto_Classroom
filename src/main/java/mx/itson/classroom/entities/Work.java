@@ -13,11 +13,55 @@ import java.util.Date;
 @Entity
 public class Work {
 
+    /**
+     * @return the idAssigment
+     */
+    public int getIdAssigment() {
+        return idAssigment;
+    }
+
+    /**
+     * @param idAssigment the idAssigment to set
+     */
+    public void setIdAssigment(int idAssigment) {
+        this.idAssigment = idAssigment;
+    }
+
+    /**
+     * @return the idStudent
+     */
+    public int getIdStudent() {
+        return idStudent;
+    }
+
+    /**
+     * @param idStudent the idStudent to set
+     */
+    public void setIdStudent(int idStudent) {
+        this.idStudent = idStudent;
+    }
+
+    /**
+     * @return the date
+     */
+    public Date getDate() {
+        return date;
+    }
+
+    /**
+     * @param date the date to set
+     */
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private Date dueDate;
+    private Date date;
     private String fileName;
+    private int idAssigment;
+    private int idStudent;
 
     @ManyToOne
     @JoinColumn(name = "id_assignment")
@@ -33,14 +77,6 @@ public class Work {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public Date getDueDate() {
-        return dueDate;
-    }
-
-    public void setDueDate(Date dueDate) {
-        this.dueDate = dueDate;
     }
 
     public String getFileName() {
