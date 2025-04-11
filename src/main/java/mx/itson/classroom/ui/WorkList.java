@@ -159,7 +159,7 @@ public class WorkList extends javax.swing.JFrame {
             }
         });
     }
-
+//Proyecto echo ya "Sin" errores
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
     private javax.swing.JLabel jLabel1;
