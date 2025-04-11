@@ -17,12 +17,22 @@ import mx.itson.classroom.persistence.WorkDAO;
  * @author nicol
  */
 public class WorkForm extends javax.swing.JFrame {
+    
+    
+  
+    
+        
+    private WorkForm(java.awt.Frame parent, boolean modal){
 
-    /**
-     * Creates new form Work
-     */
-    public WorkForm() {
+
         initComponents();
+    }
+
+
+
+
+    WorkForm() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     /**
