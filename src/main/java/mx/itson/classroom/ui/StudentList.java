@@ -19,6 +19,7 @@ public class StudentList extends javax.swing.JFrame {
      */
     public StudentList() {
         initComponents();
+        cargarTable();
     }
 
     /**

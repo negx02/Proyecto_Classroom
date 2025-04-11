@@ -60,8 +60,6 @@ public class Assignment {
     }
 
 
-    
-
     public List<Work> getWorks() {
         return works;
     }
