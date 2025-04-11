@@ -1,12 +1,9 @@
 package mx.itson.classroom.entities;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 
 @Entity
 public class Student {
@@ -16,7 +13,7 @@ public class Student {
     private int id;
     private String name;
     private String email;
-    private String idColt;
+    private int idColt;
 
     public int getId() {
         return id;
@@ -42,16 +39,12 @@ public class Student {
         this.email = email;
     }
 
-    public String getIdColt() {
+    public int getIdColt() {
         return idColt;
     }
 
-    public void setIdColt(String idColt) {
-        this.idColt = idColt;
-    }
-
     public void setIdColt(int idColt) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.idColt = idColt;
     }
 }
 

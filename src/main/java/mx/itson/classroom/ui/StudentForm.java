@@ -4,13 +4,10 @@
  */
 package mx.itson.classroom.ui;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import mx.itson.classroom.entities.Assignment;
 import mx.itson.classroom.entities.Student;
-import mx.itson.classroom.persistence.AssignmentDAO;
 import mx.itson.classroom.persistence.StudentDAO;
 
 /**
@@ -113,21 +110,17 @@ public class StudentForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-try {
-       
-        String titulo = txtNameStudent.getText(); 
-        String description = txtCorreoSudent.getText();
-        String fechaTexto = txtIdColt.getText();
+        try {
         
-        String nombre = txtNameStudent.getText();         
-    String correo = txtCorreoSudent.getText();       
-    int idColt = Integer.parseInt(txtIdColt.getText()); 
+            String nombre = txtNameStudent.getText();         
+            String correo = txtCorreoSudent.getText();       
+            int idColt = Integer.parseInt(txtIdColt.getText()); 
 
-    // Crear objeto Student
-    Student nuevoStudent = new Student();
-    nuevoStudent.setName(nombre);
-    nuevoStudent.setEmail(correo);
-    nuevoStudent.setIdColt(idColt);
+    
+        Student nuevoStudent = new Student();
+        nuevoStudent.setName(nombre);
+        nuevoStudent.setEmail(correo);
+        nuevoStudent.setIdColt(idColt);
 
     // Guardar en la base de datos
     boolean resultado = StudentDAO.guardar(nuevoStudent);
