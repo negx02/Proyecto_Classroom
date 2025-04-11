@@ -1,6 +1,6 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change arreglando bugs this license dnsdflFJSDFKJ
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit machin bugs this template
  */
 package mx.itson.classroom.ui;
 
@@ -11,7 +11,7 @@ import mx.itson.classroom.persistence.AssignmentDAO;
 
 /**
  *
- * @author nicol
+ * @author nicolas
  */
 public class AssignmentList extends javax.swing.JFrame {
 
