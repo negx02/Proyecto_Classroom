@@ -22,8 +22,9 @@
             ITS@252759a
         </property>
         
-        <mapping class="mx.itson.zoo.entidades.Animal"/>
-        <mapping class="mx.itson.zoo.entidades.Jaula"/>
+        <mapping class="mx.itson.classroom.entities.Assignment"/>
+        <mapping class="mx.itson.classroom.entities.Student"/>
+        <mapping class="mx.itson.classroom.entities.Student"/>
     </session-factory>
 </hibernate-configuration>
 
