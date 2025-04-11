@@ -16,15 +16,15 @@ public class Work {
     /**
      * @return the idAssigment
      */
-    public int getIdAssigment() {
-        return idAssigment;
+    public int getIdAssignment() {
+        return idAssignment;
     }
 
     /**
-     * @param idAssigment the idAssigment to set
+     * @param idAssignment the idAssignment to set
      */
-    public void setIdAssigment(int idAssigment) {
-        this.idAssigment = idAssigment;
+    public void setIdAssignment(int idAssignment) {
+        this.idAssignment = idAssignment;
     }
 
     /**
@@ -60,7 +60,7 @@ public class Work {
     private int id;
     private Date date;
     private String fileName;
-    private int idAssigment;
+    private int idAssignment;
     private int idStudent;
 
     @ManyToOne
