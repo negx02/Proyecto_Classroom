@@ -49,5 +49,9 @@ public class Student {
     public void setIdColt(String idColt) {
         this.idColt = idColt;
     }
+
+    public void setIdColt(int idColt) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
 

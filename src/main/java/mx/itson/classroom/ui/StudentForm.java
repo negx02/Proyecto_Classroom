@@ -9,7 +9,9 @@ import java.text.SimpleDateFormat;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import mx.itson.classroom.entities.Assignment;
+import mx.itson.classroom.entities.Student;
 import mx.itson.classroom.persistence.AssignmentDAO;
+import mx.itson.classroom.persistence.StudentDAO;
 
 /**
  *
@@ -117,29 +119,30 @@ try {
         String description = txtCorreoSudent.getText();
         String fechaTexto = txtIdColt.getText();
         
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        java.util.Date fechaUtil = sdf.parse(fechaTexto);
-        java.sql.Date dueDate = new java.sql.Date(fechaUtil.getTime());
-        
-        // Crear objeto Assignment
-        Assignment nuevoAssignment = new Assignment();
-        nuevoAssignment.setTitle(titulo);
-        nuevoAssignment.setDescription(description);
-        nuevoAssignment.setDueDate(dueDate);
-        
-        // Guardar en la base de datos
-        boolean resultado = AssignmentDAO.guardar(nuevoAssignment);
-        
-        if(resultado) {
-            JOptionPane.showMessageDialog(this, "Tarea guardada exitosamente");
-        } else {
-            JOptionPane.showMessageDialog(this, "Error al guardar la tarea", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-    } catch (ParseException ex) {
-        JOptionPane.showMessageDialog(this, "Formato de fecha incorrecto. Use yyyy-MM-dd", "Error", JOptionPane.ERROR_MESSAGE);
-    } catch (Exception ex) {
-        JOptionPane.showMessageDialog(this, "Error inesperado: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        String nombre = txtNameStudent.getText();         
+    String correo = txtCorreoSudent.getText();       
+    int idColt = Integer.parseInt(txtIdColt.getText()); 
+
+    // Crear objeto Student
+    Student nuevoStudent = new Student();
+    nuevoStudent.setName(nombre);
+    nuevoStudent.setEmail(correo);
+    nuevoStudent.setIdColt(idColt);
+
+    // Guardar en la base de datos
+    boolean resultado = StudentDAO.guardar(nuevoStudent);
+
+    if (resultado) {
+        JOptionPane.showMessageDialog(this, "Estudiante guardado exitosamente");
+    } else {
+        JOptionPane.showMessageDialog(this, "Error al guardar el estudiante", "Error", JOptionPane.ERROR_MESSAGE);
     }
+
+} catch (NumberFormatException ex) {
+    JOptionPane.showMessageDialog(this, "El ID del colegio debe ser un número válido", "Error", JOptionPane.ERROR_MESSAGE);
+} catch (Exception ex) {
+    JOptionPane.showMessageDialog(this, "Error inesperado: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+}
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     /**
