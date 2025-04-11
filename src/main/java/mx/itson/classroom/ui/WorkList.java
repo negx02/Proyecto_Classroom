@@ -49,13 +49,13 @@ public class WorkList extends javax.swing.JFrame {
 
         tblWork.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "ID", "Date", "File Name"
+                "ID", "Date", "File Name", "ID assignment", "ID student"
             }
         ));
         jScrollPane1.setViewportView(tblWork);
@@ -118,7 +118,9 @@ public class WorkList extends javax.swing.JFrame {
             modelo.addRow(new Object[] {
                 w.getId(),
                 w.getFileName(),
-                w.getDate()
+                w.getDate(),
+                w.getAssignment(),
+                w.getStudent()
             });
         }
     }
